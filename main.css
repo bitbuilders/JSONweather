@@ -1,0 +1,58 @@
+html {
+    font-family: Overpass, "Arial";
+    color: #FFD96B;
+    border: ;
+    background-image: url(images/cloudy.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    margin: auto;
+    border-radius: ;
+    letter-spacing: 1px;
+    padding: 0px;
+}
+
+footer {
+    margin-top: 18%;
+}
+
+body {
+    opacity: 0.8;
+}
+
+header {
+    border: 2px solid #3C55B2;
+    margin: 1% .5% 1% .5%;
+    padding: ;
+    background-color: #6B89FF;
+    color: #FFD96B;
+    border-radius: 20px;
+    box-shadow: 3px 4px 5px #000;
+    float: ;
+    letter-spacing: 1px;
+    font-size: 1.5em;
+    text-align: center;
+    text-shadow: 2px 2px 5px #000;
+}
+
+h3 {
+    margin: 0px;
+    padding: 0px 0px 1% 0px;
+}
+
+.day {
+    border: 2px solid #3C55B2;
+    margin: 1% .5% 1% .5%;
+    padding: 1%;
+    background-color: #6B89FF;
+    color: #FFD96B;
+    width: 16.6%;
+    border-radius: 20px;
+    box-shadow: 3px 4px 5px #000;
+    float: left;
+    font-family: Rubik, "Arial";
+    letter-spacing: 1px;
+    font-size: 1.5em;
+    text-align: center;
+    text-shadow: 1px 1px 5px #000;
+}
