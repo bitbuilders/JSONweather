@@ -17,7 +17,7 @@ footer {
 }
 
 body {
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 header {
@@ -38,6 +38,13 @@ header {
 h3 {
     margin: 0px;
     padding: 0px 0px 1% 0px;
+}
+
+img {
+    margin: 27% 1% 1% 1%;
+    width: 6%;
+    float: left;
+    position: fixed;
 }
 
 .day {

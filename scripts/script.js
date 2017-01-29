@@ -48,12 +48,12 @@ $(document).ready(function(){
                 backgroundImage : 'url(images/snowFall.gif)'
             });
         }
-        else if (day == "Rain") {
+        else if (day == "Rain" || day == "Thunderstorm") {
             $('html').css({
                 backgroundImage : 'url(images/rainFaill.gif)'
             });
         }
-        else if (day == "Cloud") {
+        else if (day == "Clouds") {
             $('html').css({
                 backgroundImage : 'url(images/cloudy.gif)'
             });
@@ -82,16 +82,34 @@ $(document).ready(function(){
             i = 4;
         }
         
+        $(this).css({
+           "background-color":"#B5C4FF",
+            "border-color":"#6B89FF"
+        });
+        
         $(this).children().get(1).innerHTML = "";
         $(this).children().get(2).innerHTML = "";
         $(this).children().get(3).innerHTML = "";
         $(this).children().get(4).innerHTML = "Min: " + weatherData.list[i].temp.min + " &#8457";
         $(this).children().get(5).innerHTML = "Max: " + weatherData.list[i].temp.max + " &#8457";
         $(this).children().get(6).innerHTML = "Wind: " + weatherData.list[i].speed + " mph";
-        $(this).children().get(7).innerHTML = "Humidity: " + weatherData.list[i].humidity + "%";
+        if (weatherData.list[i].weather[0].main == "Snow") {
+            $(this).children().get(7).innerHTML = "Snow: " + weatherData.list[i].snow + " in.";
+        }
+        else if (weatherData.list[i].weather[0].main == "Rain") {
+            $(this).children().get(7).innerHTML = "Rain: " + weatherData.list[i].rain + " in.";
+        }
+        else {
+            $(this).children().get(7).innerHTML = "Humidity: " + weatherData.list[i].humidity + "%";
+        }
         $(this).children().get(8).innerHTML = "Cloudiness: " + weatherData.list[i].clouds + "%";
     });
     $(".day").on("mouseout", function() {
+        $(this).css({
+           "background-color":"#6B89FF",
+            "border-color":"#3C55B2"
+        });
+        
         $(this).children().get(1).innerHTML = weatherData.list[i].temp.day + " &#8457";
         $(this).children().get(2).innerHTML = weatherData.list[i].weather[0].main + "-" + weatherData.list[i].weather[0].description;
         $(this).children().get(3).innerHTML = "";
@@ -100,5 +118,44 @@ $(document).ready(function(){
         $(this).children().get(6).innerHTML = "";
         $(this).children().get(7).innerHTML = "";
         $(this).children().get(8).innerHTML = "";
+    });
+    $("img").on("click", function() {
+        var x = Math.floor(Math.random() * 7);
+        
+        if (x == 0) {
+            $('html').css({
+                backgroundImage : 'url(images/cloudy.gif)'
+            });
+        }
+        else if (x == 1) {
+            $('html').css({
+                backgroundImage : 'url(images/rainFaill.gif)'
+            });
+        }
+        else if (x == 2) {
+            $('html').css({
+                backgroundImage : 'url(images/snowFall.gif)'
+            });
+        }
+        else if (x == 3) {
+            $('html').css({
+                backgroundImage : 'url(images/sunny.gif)'
+            });
+        }
+        else if (x == 4) {
+            $('html').css({
+                backgroundImage : 'url(images/clearSky.jpg)'
+            });
+        }
+        else if (x == 5) {
+            $('html').css({
+                backgroundImage : 'url(images/snow.jpg)'
+            });
+        }
+        else if (x == 6) {
+            $('html').css({
+                backgroundImage : 'url(images/rainy.jpg)'
+            });
+        }
     });
 });
